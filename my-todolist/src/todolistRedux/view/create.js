@@ -1,6 +1,9 @@
 import React from 'react'
-export default function Create(props) {
-  let { setData } = props
+import { connect } from 'react-redux';
+
+export default connect((state) => ({ state }))(function Create(props) {
+  // console.log('props', props);
+  let { dispatch } = props
   return (
     <div id="create-todo">
       <input type="text" id="new-todo" placeholder="What needs to be done?"
@@ -10,15 +13,14 @@ export default function Create(props) {
               alert('请输入内容')
               return
             }
-            setData({
-              id: Date.now(),
+            dispatch({
+              type: 'ADD',
               content: e.target.value,
-              isDone: false
-            }, 'create')
+            })
             e.target.value = ''
           }
         }}
       />
     </div>
   )
-}
+})
