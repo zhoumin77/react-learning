@@ -3,7 +3,7 @@ import "../index.css";
 import Title from './title'
 import Create from './create'
 import List from './list'
-
+import State from './state'
 
 export default function App() {
 
@@ -14,6 +14,7 @@ export default function App() {
         <Create></Create>
         <List></List>
       </div>
+      <State />
     </div>
   )
 }

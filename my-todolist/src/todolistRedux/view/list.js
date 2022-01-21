@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 
 function List(props) {
   const { state } = props
+  console.log('state', state)
   return (
     <ul id="todo-list">
       {state.length > 0 && state.map((item) => {

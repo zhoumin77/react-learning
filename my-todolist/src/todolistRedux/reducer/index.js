@@ -8,7 +8,21 @@ function reducer(state = [], action) {
         isDone: false
       })
       return [...state]
-      break;
+
+    case "DONE":
+      state.forEach((item) => {
+        if (item.id === action.id) item.isDone = action.isDone
+      })
+      return [...state]
+
+    case "DELETE":
+      return state.filter((item) => {
+        return item.id !== action.id
+      })
+
+    case "CLEAR":
+      return state.filter(item=>!item.isDone)
+
     default:
       return [...state]
   }
