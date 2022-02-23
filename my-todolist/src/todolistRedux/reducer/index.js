@@ -23,6 +23,13 @@ function reducer(state = [], action) {
     case "CLEAR":
       return state.filter(item=>!item.isDone)
 
+    case "CHANGE":
+      state.map((item)=>{
+        if( item.id === action.id ){
+          item.content = action.content
+        }
+      })
+
     default:
       return [...state]
   }
