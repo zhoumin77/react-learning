@@ -1,24 +1,16 @@
 import React from 'react';
-import { connect } from 'react-redux'
-// connect(state=>({...state}))(App)
-function App(props) {
-  console.log('props', props);
-  const { dispatch, state } = props;
+import { Link,NavLink } from 'react-router-dom'
+
+function App() {
   return (
-    <div className="App" id='app'>
-      {state.map((item) => item.id + '<br/>')}
-      <button onClick={() => {
-        dispatch({
-          type: "ADD"
-        })
-      }}>
-        按钮
-      </button>
+    <div>
+      
+      <NavLink to='/redux'>redux</NavLink>
+      <br/>
+      <NavLink to='/reduxhook'>ReduxHook</NavLink>
     </div>
-  );
+
+  )
 }
 
-// export default App;
-export default connect(state => ({
-  state
-}))(App);
+export default App;
