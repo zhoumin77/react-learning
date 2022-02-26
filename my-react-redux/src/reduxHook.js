@@ -5,14 +5,14 @@ function ReduxHook() {
   const state = useSelector(
     state => {
       console.log('state1', state);
-      return state
+      return state.time
     }
   )
   console.log('state2', state);
   const dispatch = useDispatch();
   return (
     <div>
-      {state.time.map((item) => item.id + '<br/>')}
+      {state.map((item) => item.id + '<br/>')}
       <hr />
 
       <button onClick={() => { dispatch({ type: 'TIME__ADD' }) }}>

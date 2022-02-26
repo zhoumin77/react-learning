@@ -3,11 +3,11 @@ import { connect } from 'react-redux'
 
 function Redux(props) {
   const { dispatch, state } = props;
-  console.log('props', props,state);
+  console.log('props33', props, state);
 
   return (
     <div>
-      {state.time.map((item) => item.id + '<br/>')}
+      {state.map((item) => item.id + '<br/>')}
       <hr />
 
       <button onClick={() => {
@@ -22,6 +22,11 @@ function Redux(props) {
   )
 }
 
-export default connect(state => ({
-  state
-}))(Redux);
+export default connect(state => {
+  console.log('state2', state);
+  return (
+    {
+      state: state.time
+    }
+  )
+})(Redux);
