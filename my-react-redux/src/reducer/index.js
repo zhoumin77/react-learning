@@ -1,17 +1,34 @@
-import { createStore } from 'redux';
-function reducer(state = [], action) {
-  // console.log('state',state);
+import { createStore, combineReducers } from 'redux';
+function time(time = [], action) {
+  // console.log('time',time);
   // console.log('action',action);
   switch (action.type) {
-    case 'ADD':
-      state.push({
+    case 'TIME__ADD':
+      time.push({
         id: Date.now()
       })
-    return [...state]
+      console.log(...time, 1);
+      return [...time] // 这里一定要返回一个新的对象，否则会有不更新的问题，因为是浅比较
     default:
-      return [...state]
+      return [...time]
   }
 }
+
+function num(num = 0, action) {
+  switch (action.type) {
+    case 'NUM_ADD': // 需要保证和其他reducer的action.type 不重名！！！
+      return num++;
+    default:
+      return num
+  }
+}
+
+const reducer = combineReducers({
+  time,
+  num
+})
+
+
 
 const store = createStore(reducer)
 export default store;

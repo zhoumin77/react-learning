@@ -2,15 +2,17 @@ import React from 'react';
 import { connect } from 'react-redux'
 
 function Redux(props) {
-  console.log('props', props);
   const { dispatch, state } = props;
+  console.log('props', props,state);
 
   return (
     <div>
-      {state.map((item) => item.id + '<br/>')}
+      {state.time.map((item) => item.id + '<br/>')}
+      <hr />
+
       <button onClick={() => {
         dispatch({
-          type: "ADD"
+          type: "TIME__ADD"
         })
       }}>
         按钮
