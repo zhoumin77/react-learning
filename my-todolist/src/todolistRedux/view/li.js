@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 import { connect } from 'react-redux';
 
 function Li(props) {
@@ -6,7 +6,7 @@ function Li(props) {
   const { data, dispatch } = props
   const { isDone, id, content } = data;
   let isEdit = false;
-  return (<li className={isEdit?"editing":""}>
+  return (<li className={isEdit ? "editing" : ""}>
     <div className={'todo ' + (isDone ? "done" : "")}>
       <div className="display">
         <input type="checkbox" className="check" onChange={(e) => {
