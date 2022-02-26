@@ -7,6 +7,8 @@ function reducer(state = [], action) {
       state.push({
         id: Date.now()
       })
+    break
+    default:
       return [...state]
   }
   return state
