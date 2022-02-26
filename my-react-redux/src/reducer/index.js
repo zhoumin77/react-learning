@@ -7,11 +7,10 @@ function reducer(state = [], action) {
       state.push({
         id: Date.now()
       })
-    break
+    return [...state]
     default:
       return [...state]
   }
-  return state
 }
 
 const store = createStore(reducer)

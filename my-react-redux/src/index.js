@@ -1,26 +1,25 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
-import Redux from './redux';
+import ReduxMethod from './reduxmethod';
 import ReduxHook from './reduxHook'
 
 import reportWebVitals from './reportWebVitals';
 import { Provider } from 'react-redux'
 import store from './reducer'
-import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 
 ReactDOM.render(
   <Provider store={store}>
-    <BrowserRouter>
+    <Router >
       <Routes>
-        <Route path="/" element={<App />} />
-        <Route path="/redux" element={<Redux />} />
+        <Route exact path="/" element={<App />} />
+        <Route path="/redux" element={<ReduxMethod />} />
         <Route path="/reduxhook" element={<ReduxHook />} />
       </Routes>
-    </BrowserRouter>
+    </Router>
   </Provider>
   ,
-
   document.getElementById('root')
 );
 

@@ -1,15 +1,13 @@
 import React from 'react';
-import { Link,NavLink } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 
 function App() {
   return (
     <div>
-      
-      <NavLink to='/redux'>redux</NavLink>
-      <br/>
-      <NavLink to='/reduxhook'>ReduxHook</NavLink>
+      <Link to='/redux'>redux</Link>
+      <br />
+      <Link to='/reduxhook'>ReduxHook</Link>
     </div>
-
   )
 }
 
