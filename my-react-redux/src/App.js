@@ -4,9 +4,14 @@ import { Link } from 'react-router-dom'
 function App() {
   return (
     <div>
-      <Link to='/redux'>redux</Link>
-      <br />
-      <Link to='/reduxhook'>ReduxHook</Link>
+      1
+      
+      <nav>
+        <Link to='/redux'>redux</Link>
+        <br />
+        <Link to='/reduxhook'>ReduxHook</Link>
+      </nav>
+
     </div>
   )
 }
