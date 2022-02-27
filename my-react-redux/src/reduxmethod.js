@@ -7,6 +7,7 @@ function Redux(props) {
 
   return (
     <div>
+
       {state.map((item) => item.id + '<br/>')}
       <hr />
 

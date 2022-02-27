@@ -7,17 +7,19 @@ import ReduxHook from './reduxHook'
 import reportWebVitals from './reportWebVitals';
 import { Provider } from 'react-redux'
 import store from './reducer'
-import { BrowserRouter as Router, Routes, Route ,Switch} from 'react-router-dom'
+import { BrowserRouter as Router, Routes, Route} from 'react-router-dom'
 // import { Switch, Route } from 'react-router'
 
 ReactDOM.render(
   <Provider store={store}>
     <Router >
-      <Switch>
-        <Route exact path="/" element={<App />} />
-        <Route path="/redux" element={<ReduxMethod />} />
-        <Route path="/reduxhook" element={<ReduxHook />} />
-      </Switch>
+      <Routes>
+        <Route exact path="/" element={<App />} >
+        <Route exact path="redux" element={<ReduxMethod />} />
+        <Route exact path="reduxhook" element={<ReduxHook />} />
+          </Route>
+        
+      </Routes>
     </Router>
   </Provider>
   ,
