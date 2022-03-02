@@ -10,7 +10,11 @@ function App() {
         <Link to='/redux'>redux</Link>
         <br />
         <Link to='/reduxhook'>ReduxHook</Link>
+        <br/>
+        <Link to='/ReduxThunk'>ReduxThunk</Link>
       </nav>
+
+      <hr/>
 
       <Outlet></Outlet>
 

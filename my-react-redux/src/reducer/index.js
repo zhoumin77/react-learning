@@ -1,4 +1,5 @@
-import { createStore, combineReducers } from 'redux';
+import { createStore, combineReducers,applyMiddleware } from 'redux';
+import thunk from 'redux-thunk'
 function time(time = {
   id: []
 }, action) {
@@ -41,5 +42,5 @@ const reducer = combineReducers({
 
 
 
-const store = createStore(reducer)
+const store = createStore(reducer,applyMiddleware(thunk))  // 允许 dispatch() 函数
 export default store;
