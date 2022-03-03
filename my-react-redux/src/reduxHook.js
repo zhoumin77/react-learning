@@ -5,6 +5,7 @@ function ReduxHook() {
   const state = useSelector(
     state => {
       console.log('state1', state);
+      // TODO 更新NUM_ADD之后，为什么这个 state1 会执行2次？
       return state // 注意 这里是进行渐层比较的，如果写成 time.id 的话，就不会识别到更新，因为reducer里面返回的是一个新的time
     }
   )
