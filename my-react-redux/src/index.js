@@ -5,13 +5,10 @@ import ReduxMethod from './reduxmethod';
 import ReduxHook from './reduxHook'
 import ReduxAsync from './reduxAsync'
 
-import reportWebVitals from './reportWebVitals';
 import { Provider } from 'react-redux'
 import store from './reducer'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 // import { Switch, Route } from 'react-router'
-import ReduxMethod from './reduxmethod';
-import ReduxHook from './reduxHook'
 import ReduxThunk from './reduxthunk'
 ReactDOM.render(
   <Provider store={store}>
