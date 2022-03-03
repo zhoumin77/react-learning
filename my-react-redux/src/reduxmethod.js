@@ -3,13 +3,13 @@ import { connect } from 'react-redux'
 
 function Redux(props) {
   const { dispatch, state } = props;
-  console.log('props33', props, state);
+  console.log('props33', props, state.id);
 
   return (
     <div>
 
-      {state.map((item) => item.id + '<br/>')}
-      <br />
+      {state.id.map((item) => item+ '<br/>')}
+      <hr />
 
       <button onClick={() => {
         dispatch({

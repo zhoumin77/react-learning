@@ -13,9 +13,13 @@ function App() {
         <br />
 
         <Link to='/reduxasync'>reduxasync</Link>
+     
+        <br/>
+        <Link to='/ReduxThunk'>ReduxThunk</Link>
       </nav>
 
-      <hr />
+      <hr/>
+
       <Outlet></Outlet>
 
     </div>
