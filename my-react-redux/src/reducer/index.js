@@ -14,12 +14,16 @@ function time(time = [], action) {
   }
 }
 
-function num(num = 0, action) {
+function num(num = {
+  number: 0
+}, action) {
   switch (action.type) {
     case 'NUM_ADD': // 需要保证和其他reducer的action.type 不重名！！！
-      return num++;
+      num.number++;
+      console.log(33, num);
+      return { ...num }
     default:
-      return num
+      return { ...num }
   }
 }
 

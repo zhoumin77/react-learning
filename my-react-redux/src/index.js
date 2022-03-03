@@ -3,11 +3,12 @@ import ReactDOM from 'react-dom';
 import App from './App';
 import ReduxMethod from './reduxmethod';
 import ReduxHook from './reduxHook'
+import ReduxAsync from './reduxAsync'
 
 import reportWebVitals from './reportWebVitals';
 import { Provider } from 'react-redux'
 import store from './reducer'
-import { BrowserRouter as Router, Routes, Route} from 'react-router-dom'
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 // import { Switch, Route } from 'react-router'
 
 ReactDOM.render(
@@ -15,10 +16,11 @@ ReactDOM.render(
     <Router >
       <Routes>
         <Route exact path="/" element={<App />} >
-        <Route exact path="redux" element={<ReduxMethod />} />
-        <Route exact path="reduxhook" element={<ReduxHook />} />
-          </Route>
-        
+          <Route exact path="redux" element={<ReduxMethod />} />
+          <Route exact path="reduxhook" element={<ReduxHook />} />
+          <Route exact path="reduxasync" element={<ReduxAsync />} />
+        </Route>
+
       </Routes>
     </Router>
   </Provider>

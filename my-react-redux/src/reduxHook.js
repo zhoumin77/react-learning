@@ -13,7 +13,7 @@ function ReduxHook() {
   return (
     <div>
       {state.map((item) => item.id + '<br/>')}
-      <hr />
+      <br />
 
       <button onClick={() => { dispatch({ type: 'TIME__ADD' }) }}>
         hook按钮

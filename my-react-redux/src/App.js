@@ -10,8 +10,12 @@ function App() {
         <Link to='/redux'>redux</Link>
         <br />
         <Link to='/reduxhook'>ReduxHook</Link>
+        <br />
+
+        <Link to='/reduxasync'>reduxasync</Link>
       </nav>
 
+      <hr />
       <Outlet></Outlet>
 
     </div>

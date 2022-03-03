@@ -9,7 +9,7 @@ function Redux(props) {
     <div>
 
       {state.map((item) => item.id + '<br/>')}
-      <hr />
+      <br />
 
       <button onClick={() => {
         dispatch({
