@@ -6,7 +6,7 @@
 
 import { createStore } from 'redux'
 
-function reducer(state = {}, action) {
+function reducer(state = {num:0}, action) {
   return state
 }
 
