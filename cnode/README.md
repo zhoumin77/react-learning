@@ -68,3 +68,13 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+cnodejs网站模拟
+技术栈 ：react-router hook redux  antDesign
+
+具体步骤：
+1、新增router，管理路由
+
+api
+https://cnodejs.org/api
+
