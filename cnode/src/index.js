@@ -1,21 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './App';
 import { Provider } from 'react-redux'
 import store from './reducer'
-import { BrowserRouter, Route, Routes } from 'react-router-dom'
-import routerList from './routers'
+import { BrowserRouter } from 'react-router-dom'
+import App from './App'
 ReactDOM.render(
   <Provider store={store}>
     <BrowserRouter>
-      <Routes>
-        {routerList.map((item, index) => {
-          return (
-            <Route exact={item.exact} path={item.path} key={index} element={item.element}></Route>
-          )
-        })}
-      </Routes>
-      {/* <App /> */}
+      <App />
     </BrowserRouter>
   </Provider >,
   document.getElementById('root')
