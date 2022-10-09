@@ -6,7 +6,7 @@ import ReduxHook from './reduxHook'
 import ReduxAsync from './reduxAsync'
 
 import { Provider } from 'react-redux'
-import store from './reducer'
+import {store} from './reducer'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 // import { Switch, Route } from 'react-router'
 import ReduxThunk from './reduxthunk'

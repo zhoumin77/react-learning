@@ -1,4 +1,6 @@
-import { createStore, combineReducers, applyMiddleware } from 'redux';
+import { createStore, combineReducers, applyMiddleware, compose } from 'redux';
+import { persistStore, persistReducer } from 'redux-persist'
+import storage from 'redux-persist/lib/storage'
 import thunk from 'redux-thunk'
 function time(time = {
   id: []
@@ -31,6 +33,16 @@ function num(num = {
   }
 }
 
+
+function userInfo(state = { name: '' }, action) {
+  switch (action.type) {
+    case 'USERINFO_ADD':
+      return { name: action.name }
+    case 'USERINFO_REMOVE':
+      return { name: '' }
+    default: return state
+  }
+}
 // combineReducers 相当于
 // function reducer(state={},action){
 //   return {
@@ -40,10 +52,22 @@ function num(num = {
 // }
 const reducer = combineReducers({
   time,
-  num
+  num,
+  userInfo
 })
 
 
+const persistConfig = {
+  key: 'root',
+  storage,
+}
 
-const store = createStore(reducer, applyMiddleware(thunk))  // 允许 dispatch() 函数
-export default store;
+const persistedReducer = persistReducer(persistConfig, reducer)   // 状态持久化
+
+const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;  // redux dev 工具需要
+const store = createStore(persistedReducer, /* preloadedState, */ composeEnhancers(
+  applyMiddleware(thunk)
+))
+let persistor = persistStore(store)
+// const store = createStore(reducer, applyMiddleware(thunk))  // 允许 dispatch() 函数  不用redux dev、persistedReducer
+export { store, persistor };
