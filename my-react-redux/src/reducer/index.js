@@ -1,7 +1,7 @@
 import { createStore, combineReducers, applyMiddleware, compose } from 'redux';
 import { persistStore, persistReducer } from 'redux-persist'
 import storage from 'redux-persist/lib/storage'
-import thunk from 'redux-thunk'
+import thunk from 'redux-thunk'  // 用来异步调用 dispatch
 function time(time = {
   id: []
 }, action) {
